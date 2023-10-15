@@ -1,0 +1,18 @@
+li {
+    margin-top: 5px;
+}
+li.toBuy button {
+    background-color: greenyellow;
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+li.bought button {
+    background-color: lightcoral;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+i {
+    color: grey;
+}

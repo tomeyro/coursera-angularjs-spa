@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping List</title>
+</head>
+<body ng-app="ShoppingListCheckOff">
+    <h1>My Shopping List</h1>
+    <div ng-controller="ItemAdderController as itemAdderCtrl">
+        <input type="text" ng-model="itemAdderCtrl.name" placeholder="New item name">
+        <input type="number" min="0" ng-model="itemAdderCtrl.quantity" placeholder="Quantity">
+        <button type="button" ng-click="itemAdderCtrl.addItem()">Add new item</button>
+    </div>
+    <div ng-controller="ToBuyController as toBuyCtrl">
+        <h2>To Buy:</h2>
+        <p ng-if="toBuyCtrl.items.length == 0"><i>Everything is bought!</i></p>
+        <ul>
+            <li class="toBuy" ng-repeat="item in toBuyCtrl.items">
+                Buy {{item.quantity}} {{item.name}}
+                <button type="button" ng-click="toBuyCtrl.checkItem($index)" title="Mark as bought">✓</button>
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="AlreadyBoughtController as boughtCtrl">
+        <h2>Already Bought:</h2>
+        <p ng-if="boughtCtrl.items.length == 0"><i>Nothing bought yet...</i></p>
+        <ul>
+            <li class="bought" ng-repeat="item in boughtCtrl.items">
+                Bought {{item.quantity}} {{item.name}}
+                <button type="button" ng-click="boughtCtrl.removeItem($index)" title="Remove from list">&times;</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
