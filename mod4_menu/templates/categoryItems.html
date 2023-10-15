@@ -1,0 +1,16 @@
+<ui-view>
+    <div>
+        <p>
+            <a ui-sref="home">Home</a>
+            &gt; <a ui-sref="categories">Categories</a>
+            &gt; {{ $ctrl.categoryData.category.name }}
+        </p>
+        <ul>
+            <li ng-repeat="item in $ctrl.categoryData.menu_items">
+                <a ui-sref="categories.items.item({itemId: item.short_name})">
+                    {{ item.name }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</ui-view>

@@ -1,0 +1,19 @@
+<div>
+    <p>
+        <a ui-sref="home">Home</a>
+        &gt; <a ui-sref="categories">Categories</a>
+        &gt; <a ui-sref="categories.items({categoryId: $ctrl.item.category.short_name})">{{ $ctrl.item.category.name }}</a>
+        &gt; {{ $ctrl.item.name }}
+    </p>
+    <ul>
+        <li>
+            <b>Name:</b> {{ $ctrl.item.name }}
+        </li>
+        <li>
+            <b>Short Name:</b> {{ $ctrl.item.short_name }}
+        </li>
+        <li>
+            <b>Description:</b> {{ $ctrl.item.description }}
+        </li>
+    </ul>
+</div>
