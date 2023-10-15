@@ -4,7 +4,11 @@
 
 var app = angular.module("myFirstApp", []);
 
-app.controller("NameCalculatorController", function($scope) {
+app.controller("NameCalculatorController", NameCalculatorController);
+
+NameCalculatorController.$inject = ["$scope"];
+
+function NameCalculatorController($scope) {
     $scope.name = "";
     $scope.nameValue = 0;
 
@@ -19,6 +23,6 @@ app.controller("NameCalculatorController", function($scope) {
         }
         return value;
     }
-});
+};
 
 })();

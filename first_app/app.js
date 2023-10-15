@@ -4,12 +4,16 @@
 
 var app = angular.module("myFirstApp", []);
 
-app.controller("MyFirstController", function($scope) {
+app.controller("MyFirstController", MyFirstController);
+
+MyFirstController.$inject = ["$scope"];
+
+function MyFirstController($scope) {
     $scope.name = "Pedro";
 
     $scope.sayHi = function() {
         return "Hello, " + ($scope.name || "You") + "!";
     }
-})
+};
 
 })();
