@@ -1,0 +1,28 @@
+.remove-btn {
+    background-color: lightcoral;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar {
+    margin-bottom: 10px;
+}
+
+found-items > div {
+    display: table;
+    width: 100%;
+    max-width: 500px;
+}
+found-items > div > div {
+    display: table-row;
+    border-radius: 50px;
+}
+found-items > div > div:hover {
+    background-color: #ccc;
+}
+found-items > div > div > div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}

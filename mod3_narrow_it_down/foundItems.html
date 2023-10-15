@@ -1,0 +1,11 @@
+<div>
+    <div ng-repeat="result in found">
+        <div>
+            <p><b>[{{ result.short_name }}] {{ result.name }}</b></p>
+            <p><i>{{ result.description }}</i></p>
+        </div>
+        <div>
+            <button type="button" class="remove-btn" title="Don't want this one!" ng-click="onRemove({index: $index})">&times;</button>
+        </div>
+    </div>
+</div>
