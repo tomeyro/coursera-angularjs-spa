@@ -2,7 +2,7 @@
 
 "use strict";
 
-var app = angular.module("myFirstApp", []);
+var app = angular.module("NameCalculator", []);
 
 app.controller("NameCalculatorController", NameCalculatorController);
 
