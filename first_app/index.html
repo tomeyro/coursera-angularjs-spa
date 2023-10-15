@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>First AngularJS App</title>
+</head>
+<body>
+    <h1>My 1st AngularJS App</h1>
+    <div ng-controller="MyFirstController">
+        <p>What is your name?</p>
+        <input type="text" ng-model="name">
+        <p style="margin-top: 50px;">{{sayHi()}}</p>
+    </div>
+</body>
+</html>
