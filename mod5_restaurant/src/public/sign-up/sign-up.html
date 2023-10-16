@@ -1,0 +1,52 @@
+<div class="container">
+    <h2 class="text-center">Sign Up for our Newsletter!</h2>
+    <form name="signUpForm" novalidate ng-submit="$ctrl.onSubmit()">
+        <div class="form-group">
+            <label for="name">First Name *</label>
+            <input type="text" required name="name" id="name" ng-model="$ctrl.name" class="form-control" placeholder="Name">
+            <p ng-if="signUpForm.name.$invalid && signUpForm.name.$touched">
+                First Name is a required field.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" required name="lastName" id="lastName" ng-model="$ctrl.lastName" class="form-control" placeholder="Last Name">
+            <p ng-if="signUpForm.lastName.$invalid && signUpForm.lastName.$touched">
+                Last Name is a required field.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" required name="email" id="email" ng-model="$ctrl.email" class="form-control" placeholder="Email">
+            <p ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                Please enter a valid email. e.g: someone@example.com
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="text" pattern="[\d]{7,10}" required name="phone" id="phone" ng-model="$ctrl.phone" class="form-control" placeholder="Phone">
+            <p ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+                Please enter a valid phone number (7 to 10 digits). e.g: 0000000000
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="favoriteDish">Favorite Dish *</label>
+            <input type="text" pattern="[a-zA-Z]{1,3}[\d]{1,3}" dish required name="favoriteDish" id="favoriteDish" ng-model="$ctrl.favoriteDish" class="form-control" placeholder="Favorite Dish">
+            <p ng-if="signUpForm.favoriteDish.$invalid && signUpForm.favoriteDish.$touched && signUpForm.favoriteDish.$error.required">
+                Please enter your favorite dish. e.g. A1
+            </p>
+            <p ng-if="signUpForm.favoriteDish.$invalid && signUpForm.favoriteDish.$touched && signUpForm.favoriteDish.$error.pattern">
+                The format is incorrect. Should be 1 to 2 letters, and 1 to 2 numbers. e.g. VG14
+            </p>
+            <p ng-if="signUpForm.favoriteDish.$invalid && (signUpForm.favoriteDish.$dirty || signUpForm.favoriteDish.$touched) && signUpForm.favoriteDish.$error.dish">
+                No such menu number exists.
+            </p>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" ng-disabled="!signUpForm.$valid">Sign Up!</button>
+        </div>
+    </form>
+    <div class="alert alert-success text-center mt-3" ng-if="$ctrl.success">
+        Your information has been saved
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div ng-if="$ctrl.user">
+        <h2>Hello, {{ $ctrl.user.name }} {{ $ctrl.user.lastName }}!</h2>
+        <p><b>Email:</b> {{ $ctrl.user.email }}</p>
+        <p><b>Phone:</b> {{ $ctrl.user.phone }}</p>
+        <p ng-if="dish"><b>Favorite dish:</b> [{{ $ctrl.dish.short_name }}]</p>
+    </div>
+    <div ng-if="$ctrl.dish">
+        <h2>Your favorite dish is:</h2>
+        <p>[{{ $ctrl.dish.short_name }}] {{ $ctrl.dish.name }}</p>
+        <p><i>{{ $ctrl.dish.description }}</i></p>
+        <img ng-src="images/menu/{{ $ctrl.dish.categoryId }}/{{ $ctrl.dish.short_name }}.jpg" alt="{{ $ctrl.dish.name }}">
+    </div>
+    <div ng-if="!$ctrl.user">
+        <h2>Not Signed Up Yet.</h2>
+        <p>
+            <a class="btn btn-primary" ui-sref="public.signUp">
+                Sign up Now!
+            </a>
+        </p>
+    </div>
+</div>
